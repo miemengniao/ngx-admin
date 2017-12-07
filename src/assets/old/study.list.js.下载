@@ -1,0 +1,110 @@
+﻿$(function () {
+
+    /**
+     * 初始化客户列表
+     * @param {Object} customer - 客户信息
+     * @return {HTMLElement} 一条包含客户名称和客户课题数量的节点
+     */
+    function assembleHeader(customer) {
+        var isTextOverflow = (customer.CustomerName.length >= 15),
+            li = $('<li class="customer" data-code="' + customer.CustCode + '"><div><div class="title" ' + (isTextOverflow ? ('title="' + customer.CustomerName + '"') : '') + '>' + (isTextOverflow ? hideWords(customer.CustomerName, 14) : customer.CustomerName) + '</div><span class="pull-right">' + customer.StudyCount + '</span></div></li>');
+        return li
+    }
+
+    /**
+     * 初始化课题卡片头部，卡片进度条是否有效，如果有效，有效的百分比是多少。
+     * 初始化课题卡片的body和footer。
+     * @param {Object} study - 被渲染的课题信息
+     * @param {string} baseUrl - 根据角色跳转的基础链接
+     * @return {jQueryObject} - 一个jQuey的HTML节点，
+     * 该节点就是一个独立的卡片
+     */
+
+    function assembleStudy(study, roleList) {
+        var testlibrary = study.IsTestLibrary;
+
+        var baseUrl = testlibrary == 1 ? '/TestLibrary/Patient/PatientList/': (((roleList.indexOf(study.UserRole) > -1) ? '/Study/StudyManager/StudyProgressIndex/' : '/Study/Patient/PatientList/')),
+            studyHeader = study.MultiSite ? '<a href="' + baseUrl + study.StudyId + '"><div class="study-subject"><div class="study-header"><i class="iconfont-multi-center" title="多中心课题" alt="多中心课题">&#xe75c;</i></div>' : '<a href="' + baseUrl + study.StudyId + '"><div class="study-subject"><div class="study-header"></div>',
+        percentage = study.RequirePatientCount ? (study.InGroupPatientCount / study.RequirePatientCount) : 0,
+
+        isTextOverflow = (study.StudyName.length > 25);
+        studyBody = '<div class="study-body"><div class="study-progress">' +
+            '<svg width="110" height="110" viewBox="0 0 100 100 ">' +
+	        '<circle cx="50" cy="50" r="45" stroke-width="3" stroke="#e0e0e0" fill="none"></circle>' +
+	        '<circle cx="50" cy="50" r="45" stroke-width="3" stroke="#2aa9dc" fill="none" stroke-dasharray="' + (282 * percentage) + ' 283" transform="matrix(0,-1,1,0,0,100)"></circle></svg>' +
+            '<img src="' + study.IconUrl + '" alt="课题图片">' +
+            '</div>' +
+            '<div class="study-ingroup">' + study.PatientCount + ' 例</div>' +
+            '</div>' +
+            '<div class="study-footer">' +
+            '<p ' + (isTextOverflow ? ('title="' + study.StudyName + '"') : '') + ' >' + (testlibrary == 1 ? '<label><span style="color:red;">(测试库)</span>' : '') + (isTextOverflow ? hideWords(study.StudyName, 25) : study.StudyName) + (testlibrary == 1 ? '</label>' : '') + '</p></div></div></div></a>';
+        return $(studyHeader + studyBody);
+    }
+
+    /**
+     * 渲染节点方法
+     * @param {HTMLElement} renderer - 需要插入节点的元素
+     * @param {HTMLElement} renderee - 被插入的节点元素
+     * @return {void}
+     */
+
+    function render(renderer, renderee) {
+        renderer.append(renderee);
+    }
+
+    /**
+     *  根据点击的customer来重新渲染右边的课题列表
+     * @param {Object} customerData - 客户的课题信息
+     * @return {void}
+     */
+
+    function customerFilter(datacode) {
+        var $content = $('.study-lists'),
+             node = $content.find('.study-list');
+        $.each(node, function (index, item) {
+            item.style.display = 'none';
+        });
+        if (datacode === 'all') {
+            $.each(node, function (index, item) {
+                item.style.display = 'block';
+            });
+        } else {
+            $content.find('[data-customer="' + datacode + '"]').css('display', 'block');
+        }
+    }
+    /**
+     * 检测是否为数组
+     * @param {Object} obj - 被检测对象
+     * @return {boolean} 检测结果
+     */
+
+    function isArray(obj) {
+        return Object.prototype.toString.call(obj) === '[object Array]';
+    }
+    /**
+     * 截取字符串，以目标长度结尾
+     * @param {string} text - 截取目标字符串
+     * @param {number} length - 截取长度
+     * @return {string} 被截取的字符串以...结尾
+    */
+    function hideWords(str, len) {
+        if (!str) return '';
+        str = str.toString();
+        var newStr = "",
+            strLength = str.replace(/[^\x00-\xff]/g, "**").length;
+        len = len * 2;
+        if (strLength <= len + (strLength % 2 == 0 ? 2 : 1)) return str;
+
+        for (var i = 0, newLength = 0, singleChar; i < strLength; i++) {
+            singleChar = str.charAt(i).toString();
+            if (singleChar.match(/[^\x00-\xff]/g) != null) newLength += 2;
+            else newLength++;
+
+            if (newLength > len) break;
+            newStr += singleChar;
+        }
+
+        if (strLength > len) newStr = $.trim(newStr) + '...';
+        return newStr;
+    }
+});

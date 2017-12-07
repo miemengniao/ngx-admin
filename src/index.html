@@ -1,15 +1,15 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>ngx-admin Demo Application</title>
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://www.crabedc.com/Study/Patient/Index -->
+<html><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>科研管理 - Crabyter肿瘤科研数据管理系统</title>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-  <!-- Global Site Tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102084081-3"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-102084081-3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments)};
@@ -17,20 +17,473 @@
 
     gtag('config', 'UA-102084081-3');
   </script>
+    <!-- google font -->
 
-</head>
+    <!-- styles -->
+    <!--Content/bootstrap.css版本太新了,3.0的，这个是2.2的-->
+    <link href="./assets/old/bootstrap.css" rel="stylesheet">
+    <link href="./assets/old/bootstrap-responsive.css" rel="stylesheet">
+    <link href="./assets/old/stilearn.css" rel="stylesheet">
+    <link href="./assets/old/stilearn-responsive.css" rel="stylesheet">
+    <link href="./assets/old/stilearn-helper.css" rel="stylesheet">
+    <link href="./assets/old/stilearn-icon.css" rel="stylesheet">
+    <link href="./assets/old/colorpicker.css" rel="stylesheet">
+    <link href="./assets/old/font-awesome.css" rel="stylesheet">
+    <link href="./assets/old/animate.css" rel="stylesheet">
+    <link href="./assets/old/uniform.default.css" rel="stylesheet">
+    <link href="./assets/old/stilearn-rewrite.css" rel="stylesheet">
+    <link href="./assets/old/datepicker.css" rel="stylesheet">
+
+
+    <link href="./assets/old/bootstrap-wysihtml5.css" rel="stylesheet">
+    <link href="./assets/old/jquery.fileupload.css" rel="stylesheet">
+
+    <!-- easyui -->
+    <link rel="stylesheet" type="text/css" href="./assets/old/easyui.css">
+    <link rel="stylesheet" type="text/css" href="./assets/old/icon.css">
+    <!-- crabyter -->
+    <link rel="stylesheet" type="text/css" href="./assets/old/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/old/Site.css">
+
+    <link href="./assets/old/jquery-ui-custom-1.11.2.css" rel="stylesheet">
+    <link href="./assets/old/jquery-ui-wy.css" rel="stylesheet">
+    <link href="./assets/old/layer.css" rel="stylesheet">
+
+    <link href="./assets/old/iconfont.css" rel="stylesheet">
+
+
+    <!-- 这句放到前面去了
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    -->
+
+    <link href="./assets/old/jquery.tipso.css" rel="stylesheet">
+    <link href="./assets/old/study.css" rel="stylesheet">
+    <link href="./assets/old/iconfont2.css" rel="stylesheet">
+<link rel="stylesheet" href="./assets/old/layer.css" id="layui_layer_skinlayercss" style=""></head>
+
 <body>
-  <ngx-app>Loading...</ngx-app>
 
-  <style>@-webkit-keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@-moz-keyframes spin{0%{-moz-transform:rotate(0)}100%{-moz-transform:rotate(360deg)}}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.spinner{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1003;background: #000000;overflow:hidden}  .spinner div:first-child{display:block;position:relative;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;box-shadow:0 3px 3px 0 rgba(255,56,106,1);transform:translate3d(0,0,0);animation:spin 2s linear infinite}  .spinner div:first-child:after,.spinner div:first-child:before{content:'';position:absolute;border-radius:50%}  .spinner div:first-child:before{top:5px;left:5px;right:5px;bottom:5px;box-shadow:0 3px 3px 0 rgb(255, 228, 32);-webkit-animation:spin 3s linear infinite;animation:spin 3s linear infinite}  .spinner div:first-child:after{top:15px;left:15px;right:15px;bottom:15px;box-shadow:0 3px 3px 0 rgba(61, 175, 255,1);animation:spin 1.5s linear infinite}</style>
-  <div id="nb-global-spinner" class="spinner">
-    <div class="blob blob-0"></div>
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-    <div class="blob blob-4"></div>
-    <div class="blob blob-5"></div>
-  </div>
+    <!-- section header -->
 
-</body>
-</html>
+
+
+<!-- section header -->
+<header class="header" style="min-width:1250px;" id="header">
+    <!--nav bar helper-->
+    <div class="navbar">
+        <div class="container-fluid top-bar">
+            <div class="pull-left">
+                <ul class="nav navbar-nav pull-left">
+                    <li>
+                        <h1 style="margin-top:13px;"><a href="https://www.crabedc.com/Home/Index" class="crabyter-home"><span class="span01" style="display:none;">crabyter</span></a></h1>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <div class="pull-right">
+                <ul class="nav navbar-nav pull-right">
+
+
+                    <li class="dropdown user hidden-xs">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="https://www.crabedc.com/Study/Patient/Index#none" id="li_user">
+                            <i class="iconfont icon-yonghu1 color-white helper-font-24"></i>
+                            王亚正 <i class="icofont-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="Javascript:showPersonalCenter()">
+                                    <i class="iconfont icon-kehu helper-font-16"></i>基本资料
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:showChangepwd();">
+                                    <i class="iconfont icon-quanxianguanli helper-font-16"></i>修改密码
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:showChangeMobile();">
+                                    <i class="iconfont icon-quanxianguanli helper-font-16"></i>改绑手机
+                                </a>
+                            </li>
+                            <li id="bb">
+                                <a href="https://www.crabedc.com/Study/Patient/Index#none">
+                                    <i class="iconfont icon-yunxingzhong helper-font-16"></i>问题反馈
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.crabedc.com/Study/Patient/Index#none" id="exitsystem">
+                                    <i class="iconfont icon-tuichu1 helper-font-16"></i>退出系统
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div><!--/nav bar helper-->
+    </div>
+</header>
+
+
+<div id="helpe" class="helplayer" style="display: none; width: 0px; top: 61px; height: 837px;" data-help="/content/help/study.htm">
+    <div class="helptitle" style="text-align: center; min-width: 400px; border-bottom: #ccc solid 1px;">
+        <a href="https://www.crabedc.com/Study/Patient/Index#none" class="btn-link" id="help" style="float: left; margin: 2px 3px;">
+            <div style="background: red; padding: 0 3px; height: 16px; line-height: 18px; border-radius: 3px;">
+                <i class="icofont-arrow-right color-white"></i>
+            </div>
+        </a>
+        <p class="text-center text-nowrap title">帮助文档</p>
+    </div>
+    <iframe src="./assets/old/study.html" scrolling="yes" frameborder="0" style="width: 100%; height: 837px; min-width: 400px;"></iframe>
+</div>
+
+<style>
+    ::-ms-clear {
+        display: none;
+    }
+
+    .dropdown-menu > li:hover > .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu > li {
+        position: relative;
+    }
+
+    .dropdown-menu.level2 {
+        top: -1px;
+        left: 100%;
+    }
+
+    /*2016-3-16 戴*/
+    /*此样式控制Head二级菜单左右显示，此处定义为右侧，若需要左侧，则注释下段代码*/
+    .navbar .pull-right > li > .dropdown-menu .dropdown-menu, .navbar .nav > li > .dropdown-menu.pull-right .dropdown-menu {
+        right: auto;
+        left: 100%;
+    }
+</style>
+    <!-- section content -->
+    <section style="min-width:1000px;">
+        <div id="leftmenu">
+
+
+
+<aside class="side-left" style="top: 60px; height: 900px;">
+    <ul class="sidebar">
+                <li class="active ">
+                    <a href="https://www.crabedc.com/Study/Patient/Index" title="科研管理">
+                        <div class="helper-font-24">
+                            <i class="iconfont icon-neibuguanli"></i>
+                        </div>
+                        <span class="sidebar-text">科研管理</span>
+                    </a>
+
+                </li>
+                <li class=" ">
+                    <a href="https://www.crabedc.com/TestLibrary/Study/Index" title="测试课题">
+                        <div class="helper-font-24">
+                            <i class="iconfont icon-zhenduan helper-font-16"></i>
+                        </div>
+                        <span class="sidebar-text">测试课题</span>
+                    </a>
+
+                </li>
+                <li class=" ">
+                    <a href="https://www.crabedc.com/Study/Patient/Index#" title="我的培训">
+                        <div class="helper-font-24">
+                            <i class="iconfont icon-iconfontkeji2 helper-font-16"></i>
+                        </div>
+                        <span class="sidebar-text">我的培训</span>
+                    </a>
+
+                        <ul class="sub-sidebar-form corner-top shadow-white">
+                                    <li>
+                                        <a href="https://www.crabedc.com/Vdisk/Course/SysTraining" title="系统培训" class="corner-all">
+
+                                            <span class="sidebar-text">系统培训</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.crabedc.com/Vdisk/Course" title="课题培训" class="corner-all">
+
+                                            <span class="sidebar-text">课题培训</span>
+                                        </a>
+                                    </li>
+
+                        </ul>
+                </li>
+                <li class=" ">
+                    <a href="https://www.crabedc.com/Study/Setting/List" title="课题设置">
+                        <div class="helper-font-24">
+                            <i class="iconfont icon-iconfontgongcheng1"></i>
+                        </div>
+                        <span class="sidebar-text">课题设置</span>
+                    </a>
+
+                </li>
+                <li class=" ">
+                    <a href="https://www.crabedc.com/Study/Patient/Index#" title="标准知识库">
+                        <div class="helper-font-24">
+                            <i class="iconfont icon-shu"></i>
+                        </div>
+                        <span class="sidebar-text">标准知识库</span>
+                    </a>
+
+                        <ul class="sub-sidebar-form corner-top shadow-white">
+                                    <li>
+                                        <a href="https://www.crabedc.com/Dict/Inspect/List" title="检查套餐" class="corner-all">
+                                            <i class="iconfont icon-microscope"></i>
+                                            <span class="sidebar-text">检查套餐</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.crabedc.com/Dict/Inspectitem/List" title="检查子项目字典" class="corner-all">
+                                            <i class="iconfont icofont-beaker"></i>
+                                            <span class="sidebar-text">检查子项目字典</span>
+                                        </a>
+                                    </li>
+
+                        </ul>
+                </li>
+                <li class=" ">
+                    <a href="https://www.crabedc.com/Study/Patient/Index#" title="科研设置">
+                        <div class="helper-font-24">
+                            <i class="iconfont icon-iconfontgongcheng1"></i>
+                        </div>
+                        <span class="sidebar-text">科研设置</span>
+                    </a>
+
+                        <ul class="sub-sidebar-form corner-top shadow-white">
+                                    <li>
+                                        <a href="https://www.crabedc.com/Manage/Dict" title="数据字典" class="corner-all">
+                                            <i class="icofont-rss"></i>
+                                            <span class="sidebar-text">数据字典</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.crabedc.com/Manage/Fields" title="字段库" class="corner-all">
+                                            <i class="icofont-list-alt"></i>
+                                            <span class="sidebar-text">字段库</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.crabedc.com/Vdisk/Document/StudyFolderTemplate" title="文件夹模板" class="corner-all">
+                                            <i class="icofont-list"></i>
+                                            <span class="sidebar-text">文件夹模板</span>
+                                        </a>
+                                    </li>
+
+                        </ul>
+                </li>
+                <li class=" ">
+                    <a href="https://www.crabedc.com/Vdisk/SysTraining" title="系统培训">
+                        <div class="helper-font-24">
+                            <i class="icofont-cloud"></i>
+                        </div>
+                        <span class="sidebar-text">系统培训</span>
+                    </a>
+
+                </li>
+                <li class=" ">
+                    <a href="https://www.crabedc.com/Study/Patient/Index#" title="系统管理">
+                            <div class="badge badge-important menu-alert">1</div>
+                        <div class="helper-font-24">
+                            <i class="iconfont icon-iconfontgongcheng1"></i>
+                        </div>
+                        <span class="sidebar-text">系统管理</span>
+                    </a>
+
+                        <ul class="sub-sidebar-form corner-top shadow-white">
+                                    <li>
+                                        <a href="https://www.crabedc.com/Dict/Hospital/List" title="单位管理" class="corner-all">
+                                            <i class="iconfont icofont-flag"></i>
+                                            <span class="sidebar-text">单位管理</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.crabedc.com/Manage/Customer" title="客户管理" class="corner-all">
+                                            <i class="icofont-star"></i>
+                                            <span class="sidebar-text">客户管理</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.crabedc.com/Manage/User" title="用户管理" class="corner-all">
+                                            <i class="icofont-user"></i>
+                                            <span class="sidebar-text">用户管理</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.crabedc.com/Manage/Menu" title="菜单管理" class="corner-all">
+                                            <i class="icofont-list"></i>
+                                            <span class="sidebar-text">菜单管理</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.crabedc.com/Manage/SysRole" title="角色管理" class="corner-all">
+                                            <i class="icofont-lock"></i>
+                                            <span class="sidebar-text">角色管理</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.crabedc.com/Manage/Sysdict" title="系统字典" class="corner-all">
+                                            <i class="icofont-rss"></i>
+                                            <span class="sidebar-text">系统字典</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.crabedc.com/Manage/Feedback" title="问题反馈" class="corner-all">
+                                            <i class="icofont-question-sign"></i>
+                                            <span class="sidebar-text">问题反馈</span>
+                                                <div class="badge badge-important menu-alert">1</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.crabedc.com/Manage/Userlog" title="用户日志" class="corner-all">
+                                            <i class="icofont-comments"></i>
+                                            <span class="sidebar-text">用户日志</span>
+                                        </a>
+                                    </li>
+
+                        </ul>
+                </li>
+
+    </ul>
+</aside>
+        </div>
+        <!-- content -->
+        <div id="content" class="content" style="width: 1822px;">
+
+
+
+    <div class="header-bar"></div>
+    <div class="content-bar">
+      <ngx-app></ngx-app>
+    </div>
+
+<!-- Modal end -->
+
+
+        </div><!-- /content -->
+
+
+    </section>
+    <footer class="hidden">
+
+
+
+
+<!-- section footer -->
+<a rel="to-top" href="https://www.crabedc.com/Study/Patient/Index#top"><i class="icofont-circle-arrow-up"></i></a>
+
+
+    </footer>
+    <!-- javascript -->
+    <script src="./assets/old/jquery"></script>
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="./assets/old/jquery.metadata.js.下载"></script>
+    <script type="text/javascript" src="./assets/old/jquery.validate.js.下载"></script>
+    <script type="text/javascript" src="./assets/old/jquery.validate.message-zh_CN.js.下载"></script>
+    <script type="text/javascript" src="./assets/old/jquery.easyui.min-1.4.1.js.下载"></script>
+    <script type="text/javascript" src="./assets/old/easyui-lang-zh_CN.js.下载"></script>
+    <script type="text/javascript" src="./assets/old/bootstrap.min.js.下载"></script>
+    <script type="text/javascript" src="./assets/old/stilearn-base.js.下载"></script>
+    <script type="text/javascript" src="./assets/old/bootstrap-colorpicker.js.下载"></script>
+    <script type="text/javascript" src="./assets/old/bootstrap-datepicker.js.下载"></script>
+
+    <script type="text/javascript" src="./assets/old/jquery.ui.widget.js.下载"></script>
+    <script type="text/javascript" src="./assets/old/jquery.iframe-transport.js.下载"></script>
+    <script type="text/javascript" src="./assets/old/jquery.fileupload.js.下载"></script>
+
+    <script type="text/javascript" src="./assets/old/jquery-ui.autocomplete.1.11.2.js.下载"></script>
+    <script type="text/javascript" src="./assets/old/app.jquey-ui.js.下载"></script>
+    <script type="text/javascript" src="./assets/old/moment.min.js.下载"></script>
+    <script type="text/javascript" src="./assets/old/app.core.js.下载"></script>
+    <script type="text/javascript" src="./assets/old/app.ui.js.下载"></script>
+
+    <script type="text/javascript" src="./assets/old/jquery.validate.unobtrusive.min.js.下载"></script>
+    <script type="text/javascript" src="./assets/old/jquery.unobtrusive-ajax.min.js.下载"></script>
+
+    <script type="text/javascript" src="./assets/old/layer.js.下载"></script>
+
+
+    <!--DM核查确认，冻结，锁定页面公用的js文件（treegrid的扩展方法）-->
+    <!--此js只适用于对treegrid父节点进行分页的扩展，若不分页，则需要另一个js-->
+    <script src="./assets/old/study.crf.field.check.js.下载"></script>
+    <!-------------------------------------------------------------------------------
+    Author:  LDH
+      Date:  2016-1-29
+    Remark:【悬浮文本提示】text,textArea,DropDownList
+    --------------------------------------------------------------------------------->
+    <script src="./assets/old/tipInfoForControls.js.下载"></script>
+    <!------------------------------------------------------------------------------->
+
+    <script type="text/javascript">
+        $(function () {
+            var token = $('<input name="__RequestVerificationToken" type="hidden" value="mRPw2ymtEkxs7faJvGPGIKFAsa8FflybFev0vCXcqDYpQ6TPi1elMEeAMyLUntGywvUqaWDkovAOgDXdZo_ludOiBfqJcgMwy-S8t6u1ZcM1" />').val();
+            $(document).ajaxSend(function (e, jqXHR, ajaxOpt) {
+                jqXHR.setRequestHeader("__RequestVerificationToken", token);
+            });
+            $('form').each(function () {
+                var tokenInput = $(this).find("input[name=__RequestVerificationToken]");
+                if (tokenInput.length==0) {
+                    $(this).append('<input type="hidden" name="__RequestVerificationToken" value="' + token + '" />');
+                }
+            });
+
+            //密码是否需要修改:3个月提醒，4个月弹窗修改
+            NeedModifyPassword();
+
+            //请保证顶级页面调用SessionKeep,弹窗或iframe引用的页面需要禁用掉SessionKeep，否则会多次弹窗提示重新验证密码
+            Sessionkeep();
+        });
+
+        //密码是否需要修改:3个月提醒，4个月弹窗修改（只在登陆后跳转的首页检查）
+        function NeedModifyPassword() {
+            days=0;
+                //days=-1; //没有最后修改日期
+                days = days == -1 ? 121 : days;
+                if (days >= 90 && days < 120) {
+                    $('#header').append('<div style="font-size:12px;background-color:#FCFFCD;position:fixed;display:block;width:100%;cursor:pointer;text-align:center; left:0;top:0;">您已经超过'
+                        + days + '天没有修改密码了，为了您的账号安全请尽快修改密码！</div>');
+                } else if (days >= 120) {
+                    pwddlg.setSize(460, 320);
+                    pwddlg.setURL("您已经长时间没有修改过密码了，为了你的账号安全请修改密码！", "/Manage/User/ChangePassword");
+                    pwddlg.show();
+                }
+
+        }
+
+        var relogin = false;
+        var dlglogin = new MyAppDialog(440, 300, {
+            onClose: function () {
+                if (!relogin) {
+                    location.href = "/Member/Logout";
+                } else {
+                    setTimeout('Sessionkeep()', 120000);
+                }
+            }
+        });
+
+        //检测用户状态（必须是get,no cache）
+        function Sessionkeep() {
+
+        }
+
+    </script>
+
+
+    <script type="text/javascript" src="./assets/old/jquery.tipso.js.下载"></script>
+    <script type="text/javascript" src="./assets/old/study.list.js.下载"></script>
+
+
+</body></html>
